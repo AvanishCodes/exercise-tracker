@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 
 // Mongoose connection
@@ -26,12 +26,12 @@ const exercisesRouter = require('./routes/exercises')
 const usersRouter = require('./routes/users')
 
 // Use the routes
-app.use('/users', usersRouter);
 app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
 
 
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-    console.log(process.env.PORT);
+    // console.log(process.env.PORT);
 })

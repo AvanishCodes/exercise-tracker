@@ -6,17 +6,17 @@ router.route('/').get((req, res) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(400).json('Error: ' + err));
-    res.send("Hello")
-})
+    // res.send("Hello")
+});
 
 router.route('/add').post((req, res) => {
     const username = req.body.username;
 
     const newUser = new User({ username });
 
-    newUser.save(err)
-        .then(() => res.json('User added'))
+    newUser.save()
+        .then(() => res.json({success: true, status: 200, message: 'User added'}))
         .catch(err => res.status(400).json('Error: ' + err));
-})
+});
 
 module.exports = router;
