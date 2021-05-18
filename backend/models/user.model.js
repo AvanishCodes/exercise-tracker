@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = new mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     username: {
@@ -11,7 +11,7 @@ const userSchema = new Schema({
         minlength: 6
     },
 }, {
-    timestamps: true,
+    timestamps: true
 });
 
 const User = mongoose.model('User', userSchema);

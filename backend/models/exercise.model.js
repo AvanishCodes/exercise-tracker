@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = new mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema({
     username: {
@@ -20,7 +20,7 @@ const exerciseSchema = new Schema({
         required: true
     }
 }, {
-    timestamps: true,
+    timestamps: true
 });
 
 const Exercise = mongoose.model('Exercise', exerciseSchema);
